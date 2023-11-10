@@ -1,0 +1,250 @@
+.support-chat-container {
+  //   display: none;
+}
+.support-chat-container.show {
+  display: block;
+}
+
+.support-chat {
+  position: fixed;
+  bottom: 3rem;
+  right: 0;
+  max-width: 27.87rem;
+  width: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  z-index: 1045;
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  padding-bottom: 3rem;
+}
+.support-chat-start .support-chat {
+  right: auto;
+  left: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+.support-chat-bottom-lg .support-chat {
+  bottom: 5rem;
+}
+@media (min-width: 576px) {
+  .support-chat {
+    right: 1rem;
+  }
+  .support-chat-start .support-chat {
+    left: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .support-chat {
+    right: 2rem;
+  }
+  .support-chat-start .support-chat {
+    left: 2rem;
+  }
+}
+.support-chat .card {
+  -webkit-box-shadow: 0px 0px 32px 0px rgba(36, 40, 46, 0.12);
+  box-shadow: 0px 0px 32px 0px rgba(36, 40, 46, 0.12);
+}
+.dark .support-chat .card {
+  -webkit-box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.41);
+}
+.support-chat .card-body {
+  height: 28rem;
+}
+.support-chat.show-chat {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.support-chat .send-btn {
+  width: 37.06px;
+  height: 37.06px;
+  border-radius: 50%;
+  color: var(--phoenix-primary);
+}
+.support-chat .send-btn:hover {
+  background-color: var(--phoenix-gray-100);
+  color: var(--phoenix-primary-500);
+}
+.support-chat .send-btn:active {
+  background-color: var(--phoenix-gray-200);
+  color: var(--phoenix-primary-500);
+}
+
+.support-chat + .btn-support-chat {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 1rem;
+  width: 9rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--phoenix-white) !important;
+  z-index: 1045;
+  border-radius: var(--phoenix-border-radius-pill);
+  -webkit-box-shadow: 0px 0px 32px 0px rgba(36, 40, 46, 0.12);
+  box-shadow: 0px 0px 32px 0px rgba(36, 40, 46, 0.12);
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.dark .support-chat + .btn-support-chat,
+.dark .picmo__popupContainer.picmo__light .support-chat + .btn-support-chat {
+  -webkit-box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.41);
+}
+.support-chat-start .support-chat + .btn-support-chat {
+  right: auto;
+  left: 1rem;
+}
+.support-chat-bottom-lg .support-chat + .btn-support-chat {
+  bottom: 4.5rem;
+}
+@media (min-width: 576px) {
+  .support-chat + .btn-support-chat {
+    right: 2rem;
+  }
+  .support-chat-start .support-chat + .btn-support-chat {
+    left: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .support-chat + .btn-support-chat {
+    right: 3rem;
+  }
+  .support-chat-start .support-chat + .btn-support-chat {
+    left: 3rem;
+  }
+}
+.support-chat + .btn-support-chat:hover {
+  background-color: var(--phoenix-gray-100) !important;
+}
+.support-chat + .btn-support-chat .fa-chevron-down {
+  display: none;
+}
+.support-chat + .btn-support-chat.btn-chat-close {
+  border-radius: 50%;
+  width: 3rem;
+}
+.support-chat + .btn-support-chat.btn-chat-close .btn-text,
+.support-chat + .btn-support-chat.btn-chat-close .fa-circle {
+  display: none;
+}
+.support-chat + .btn-support-chat.btn-chat-close .fa-chevron-down {
+  display: block;
+}
+
+/* Existing styles */
+.microphone-component {
+  position: fixed; /* Fixed position */
+  right: 20px; /* Distance from the right */
+  bottom: 20px; /* Distance from the bottom */
+}
+
+.mic-icon .bi {
+  cursor: pointer;
+  transition: color 0.3s ease; /* Added transition for smoother state changes */
+}
+
+.recording-interface {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pulsating-dot {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  animation: pulsate 1s infinite;
+}
+
+.recording-timer {
+  margin-left: 10px;
+}
+
+.cancel-recording {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* State-based Styles */
+.mic-icon.default i.bi-mic {
+  color: var(--default-mic-color);
+}
+
+.mic-icon.bot-talking i.bi-mic {
+  color: var(--bot-talking-color);
+}
+
+.mic-icon.user-talking i.bi-mic {
+  color: var(--user-talking-color);
+}
+
+.mic-icon.permission-denied i.bi-mic {
+  color: var(--permission-denied-color);
+}
+
+.mic-icon.both-talking i.bi-mic {
+  color: var(--both-talking-color);
+}
+
+.support-chat {
+  .widget-footer {
+    background-color: #efefef;
+  }
+  
+  .widget-footer-active {
+    background-color: #002d40;
+    .hidden {
+      visibility: hidden;
+    }
+  }
+  .record-indiciator {
+    width: 14px;
+    height: 14px;
+    background: #F26D7E;
+    border-radius: 50%;
+  }
+}

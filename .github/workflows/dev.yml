@@ -1,0 +1,56 @@
+name: Development
+on:
+  push:
+    branches: [ "phantom" ]
+  pull_request:
+    branches: [ "phantom" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+       node-version: [20.x]
+    steps:
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - name: Install
+        run: |
+            npm install --force
+      - name: Build Static App
+        run: |
+            npm run build:css
+            npm run predeploy
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --delete
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          AWS_S3_BUCKET: ${{ secrets.DEV_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.DEV_AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DEV_AWS_SECRET_KEY }}
+          AWS_REGION: ${{ secrets.DEV_AWS_REGION }}
+          SOURCE_DIR: "build"
+  slack:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+       node-version: [20.x]
+    if: ${{ always() }}
+    needs: build
+    steps:
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: phoenix
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: 'Post Content :rocket:'
+          SLACK_TITLE: REPO Update
+          SLACK_USERNAME: DevOps Bot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}

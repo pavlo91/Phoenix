@@ -1,0 +1,118 @@
+/*-----------------------------------------------
+|   Scrollbar style for windows
+-----------------------------------------------*/
+
+.scrollbar,
+.scrollbar-overlay {
+  @include chrome-scrollbar;
+}
+.navbar-vibrant {
+  .scrollbar {
+    @include chrome-scrollbar(rgba($white, 0.4));
+  }
+}
+
+.firefox {
+  .scrollbar {
+    @include firefox-scrollbar;
+  }
+  .navbar-vibrant {
+    .scrollbar {
+      @include firefox-scrollbar(rgba($white, 0.4));
+    }
+  }
+}
+
+.os-theme-dark {
+  & > .os-scrollbar {
+    & > .os-scrollbar-track > .os-scrollbar-handle {
+      background: $scrollbar-bg;
+    }
+    @include hover-focus {
+      & > .os-scrollbar-track > .os-scrollbar-handle {
+        background: $scrollbar-bg;
+      }
+    }
+  }
+}
+
+.custom-scrollbar {
+  > {
+    div {
+      &:first-child {
+        [dir='rtl'] & {
+          margin-right: -15px !important;
+          margin-left: 0px !important;
+        }
+      }
+    }
+  }
+}
+
+.table-scrollbar {
+  margin-left: -4px !important;
+  padding-left: 4px !important;
+  [dir='rtl'] & {
+    margin-left: -4px !important;
+    padding-left: 4px !important;
+  }
+  > {
+    div {
+      overflow: auto !important;
+      margin-left: -4px !important;
+      padding-left: 4px !important;
+      [dir='rtl'] & {
+        margin-left: -4px !important;
+        padding-left: -4px !important;
+        // margin-right: -15px !important;
+      }
+    }
+  }
+}
+
+.track-vertical {
+  right: 2px !important;
+  > {
+    div {
+      background-color: $scrollbar-bg !important;
+    }
+  }
+}
+
+.windows,
+.firefox {
+  &[dir='rtl'] {
+    .custom-scrollbar {
+      &:not(.table-scrollbar) {
+        > {
+          div {
+            margin-right: -17px !important;
+            margin-left: 0px !important;
+          }
+        }
+        .track-vertical {
+          right: 19px !important;
+        }
+      }
+    }
+  }
+  .table-scrollbar {
+    > {
+      div {
+        margin-right: 0 !important;
+      }
+    }
+  }
+}
+.product-scrollbar {
+  > {
+    div {
+      &:first-child {
+        padding-left: 4px !important;
+      }
+      // [dir='rtl'] & {
+      //   padding-left: -4px !important;
+      // }
+    }
+  }
+}

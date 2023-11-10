@@ -1,0 +1,49 @@
+/* -------------------------------------------------------------------------- */
+/*                            React Dropzone                                  */
+/* -------------------------------------------------------------------------- */
+
+.dropzone {
+  border: 1px dashed var(--#{$prefix}gray-400);
+  padding: map-get($spacers, 7) map-get($spacers, 5);
+  border-radius: $border-radius;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  &.dropzone-sm {
+    padding: map-get($spacers, 4);
+  }
+}
+
+.image-attachment-preview {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  border: 1px solid var(--#{$prefix}gray-200);
+  border-radius: 8px;
+  position: relative;
+  // overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .close-btn {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    padding: 0;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--#{$prefix}gray-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

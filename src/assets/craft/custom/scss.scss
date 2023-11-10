@@ -1,0 +1,31 @@
+.h-40px {
+    height: 40px !important;
+}
+
+@media (min-width: 992px) {
+    .flex-lg-row-auto {
+        flex: 0 0 auto;
+    }
+
+    .flex-lg-row-fluid {
+        flex: 1 auto;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .w-xl-400px {
+        width: 400px !important;
+    }
+}
+
+.btn.btn-outline.btn-outline-dashed {
+    border-width: 1px;
+    border-style: dashed;
+}
+
+.btn.btn-outline.btn-outline-dashed.active {
+    color: var(--phoenix-primary);
+    border-color: var(--phoenix-primary-lightgrey);
+    background-color: var(--phoenix-primary-lightgrey) !important;
+}
