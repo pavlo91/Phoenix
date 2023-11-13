@@ -224,15 +224,11 @@ import Hyper_Ecommerce_Orders from "pages/apps/e-commerce/admin/hyper_orders";
 import Hyper_Ecommerce_Products from "pages/apps/e-commerce/admin/hyper_products";
 
 import Register from "pages/authentication/Register";
-<<<<<<< Updated upstream
-=======
 import UserList from "pages/apps/user-managment/user/UserList/UserList";
 import UserView from "pages/apps/user-managment/user/UserView/UserView";
 import RoleList from "pages/apps/user-managment/role/RoleList/RoleList";
 import RoleView from "pages/apps/user-managment/role/RoleView/RoleView";
 import Permission from "pages/apps/user-managment/Permission/Permission";
->>>>>>> Stashed changes
-
 const routes: RouteObject[] = [
   {
     element: <App />,
