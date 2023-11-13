@@ -6,7 +6,6 @@ import { useSettingsPanelContext } from "providers/SettingsPanelProvider";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 // import "assets/main.scss";
-import SupportChat from "components/support-chat/SupportChat";
 import ChatProvider from "providers/ChatProvider";
 import { conversationsSupportChat } from "data/chat";
 
@@ -52,7 +51,7 @@ const App = () => {
       ) : (
         <>
           <ChatProvider conversations={conversationsSupportChat}>
-            <SupportChat />
+            {/* <SupportChat /> */}
           </ChatProvider>
           <Outlet />
           {showToggle && showSettingPanelButton && (

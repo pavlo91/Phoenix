@@ -5,6 +5,7 @@ import { Message as MessageType, User, actions } from "data/chat";
 import useLightbox from "hooks/useLightbox";
 import MessageActionButtons from "./MessageActionButtons";
 import MessageAttachments from "./MessageAttachments";
+import Moment from 'react-moment';
 
 interface MessageProps {
   message: MessageType;
@@ -76,7 +77,11 @@ const Message = ({ message, user }: MessageProps) => {
               "text-end": message.type === "sent",
             })}
           >
-            <p className="mb-0 fs-10 text-600 fw-semi-bold">{message.time}</p>
+            <p className="mb-0 fs-10 text-600 fw-semi-bold">
+              <Moment format="M.D HH:mm">
+                {message.time}
+              </Moment>
+            </p>
           </div>
           <Lightbox {...lightboxProps} />
         </div>

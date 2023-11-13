@@ -72,8 +72,8 @@ const Register = () => {
     return (
         <div className="d-flex flex-column flex-root">
 			<div className="d-flex flex-column flex-lg-row flex-column-fluid stepper stepper-pills stepper-dark stepper-column">
-                <div className="d-flex flex-column flex-lg-row-auto w-xl-400px positon-xl-relative" data-bs-theme="light">
-                    <div className="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-400px scroll-y bg-dark">
+                <div className="d-flex flex-column flex-lg-row-auto w-xl-400px positon-xl-relative bg-dark" data-bs-theme="light">
+                    <div className="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-400px scroll-y">
                         <div className="d-flex flex-row-fluid flex-column align-items-center align-items-lg-start p-10 p-lg-20">         
                             <a href="/craft/index.html" className="mb-10 mb-lg-20">
                                 <img alt="Logo" src={craftLogo} className="h-40px" />

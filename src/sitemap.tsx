@@ -53,9 +53,9 @@ export const routes: RouteItems[] = [
             active: true,
           },
           {
-            name: "project-management",
-            path: "/dashboard/project-management",
-            pathName: "project-management-dashbaord",
+            name: "user-management",
+            path: "/dashboard/user-management",
+            pathName: "user-management-dashbaord",
             topNavIcon: "clipboard",
             active: true,
           },
@@ -369,6 +369,55 @@ export const routes: RouteItems[] = [
             name: "hyper_gantt",
             path: "/apps/project-management/gantt",
             pathName: "project-management-gantt",
+            active: true,
+          },
+        ],
+      },
+      {
+        name: "user-management",
+        active: true,
+        icon: "users",
+        pages: [
+          {
+            name: "User",
+            active: true,
+            pages: [
+              {
+                name: "Users List",
+                path: "/apps/user-management/user/list",
+                pathName: "user-management-user-list",
+                active: true,
+              },
+              {
+                name: "View User",
+                path: "/apps/user-management/user/view",
+                pathName: "user-management-user-view",
+                active: true,
+              },
+            ]
+          },
+          {
+            name: "Role",
+            active: true,
+            pages: [
+              {
+                name: "Roles List",
+                path: "/apps/user-management/role/list",
+                pathName: "user-management-role-list",
+                active: true,
+              },
+              {
+                name: "View Role",
+                path: "/apps/user-management/role/view",
+                pathName: "user-management-role-view",
+                active: true,
+              }
+            ]
+          },
+          {
+            name: "Permission",
+            path: "/apps/user-management/permission",
+            pathName: "user-management-permission",
             active: true,
           },
         ],

@@ -11,26 +11,32 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
   const [navItems] = useState([
     {
       label: 'Profile',
+      url: '#!',
       icon: 'user'
     },
     {
       label: 'Dashboard',
+      url: '#!',
       icon: 'pie-chart'
     },
     {
       label: 'Posts & Activity',
+      url: '#!',
       icon: 'lock'
     },
     {
       label: 'Settings & Privacy ',
+      url: '/settings',
       icon: 'settings'
     },
     {
       label: 'Help Center',
+      url: '#!',
       icon: 'help-circle'
     },
     {
       label: 'Language',
+      url: '#!',
       icon: 'globe'
     }
   ]);
