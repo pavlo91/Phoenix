@@ -2,6 +2,11 @@
 
 Welcome to the ReactJS version of the original Phoenix theme. This document will guide you on how the Phoenix-React theme is organized, the basics of customization, and how to compile it from the source code if needed.
 
+## Screenshots
+![Ecommerce](./ecommerce.png?raw=true "Ecommerce")
+![Social](./social-feed.png?raw=true "Social Feed")
+![Project](./projects.png?raw=true "Project")
+
 ## Running in Local Environment
 
 This project is scaffolded using Create React App.
